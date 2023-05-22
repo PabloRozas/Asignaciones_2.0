@@ -5,7 +5,7 @@ import pandas as pd
 """ get_data """
 """ 
 Descripción: Función que lee los datos de los alumnos y los tutrores de un archivo excel y estos son almacenados en una lista que es retornada, donde 
-el index 0 es para VAE, 1 para PACE, 3 Solicitudes y 4 para los tutores
+el index 0 es para VAE, 1 para PACE, 2 Solicitudes y 3 para los tutores
 Entrada: name (nombre en string del archivo excel)
 Salida: data (lista con los datos de los alumnos y tutores)
 """
@@ -93,35 +93,19 @@ def get_data(name):
     #concatenar dfTutores.iloc[:, 0:9] con dfTutores.iloc[:, 11]
     dfTutores = pd.concat([dfTutores.iloc[:, 0:9], dfTutores.iloc[:, 11]], axis=1) # Se concatenan las columnas de los tutores que tienen asigandos los datos
     
-    print("Tutores")
-    dfTutores.info()
+    # print("Tutores")
+    # dfTutores.info()
 
     dfTutores.columns = cambio_tutores
 
-    print("Tutores")
-    dfTutores.info()
+    #print("Tutores")
+    #dfTutores.info()
 
 
     data.append(dfTutores) # Se agrega a la lista de datos
 
     return data
 
-""" transform_data_class """
-"""
-
-"""
-
-
-
-
-
-
-
-
-
 
 def test():
     get_data("Resource\data.xlsx")
-
-test()
-

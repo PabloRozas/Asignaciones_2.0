@@ -4,3 +4,6 @@ class Alumnos:
 
     def add_alumno(self, alumno):
         self.alumnos.append(alumno)
+
+    def get_alumnos(self):
+        return self.alumnos
