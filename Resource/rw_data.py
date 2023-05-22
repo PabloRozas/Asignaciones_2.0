@@ -41,7 +41,7 @@ def get_data(name):
         "HORAS"
     ]
 
-    dfVAE2023 = pd.read_excel(name, sheet_name= 1) # Se lee la primera hoja del excel que contiene a los alumnos VAE 2023
+    dfVAE2023 = pd.read_excel(name, sheet_name= 0) # Se lee la primera hoja del excel que contiene a los alumnos VAE 2023
     dfVAE2023 = dfVAE2023.iloc[:, 0:14] # Se eliminan las columnas de los tutores que tienen asigandos los datos
     dfVAE2023.drop("NOMBRE SOCIAL", axis=1, inplace=True) # Se elimina la columna de nombre social
     dfVAE2023["RUT"] = dfVAE2023["RUT_USACH"].astype(str).str.cat(dfVAE2023["DV"].astype(str), sep="-") # Se crea la columna RUT con el rut y el digito verificador
@@ -51,13 +51,14 @@ def get_data(name):
 
     dfVAE2023.columns = cambio_alumnos
 
+    # print("-------------------------------------------------------------------")
     # print("VAE 2023")
     # dfVAE2023.info()
     # print(dfVAE2023.head())
 
     data.append(dfVAE2023) # Se agrega a la lista de datos
 
-    dfPACE2023 = pd.read_excel(name, sheet_name= 2) # Se lee la segunda hoja del excel que contiene a los alumnos PACE 2023
+    dfPACE2023 = pd.read_excel(name, sheet_name= 1) # Se lee la segunda hoja del excel que contiene a los alumnos PACE 2023
     dfPACE2023 = dfPACE2023.iloc[:, 0:14] # Se eliminan las columnas de los tutores que tienen asigandos los datos
     dfPACE2023.drop("NOMBRE SOCIAL", axis=1, inplace=True) # Se elimina la columna de nombre social
     dfPACE2023["RUT"] = dfPACE2023["RUT_USACH"].astype(str).str.cat(dfPACE2023["DV"].astype(str), sep="-") # Se crea la columna RUT con el rut y el digito verificador
@@ -67,13 +68,15 @@ def get_data(name):
 
     dfPACE2023.columns = cambio_alumnos
 
-
+    # print("--------------------------------------------------------------------")
     # print("PACE 2023")
     # dfPACE2023.info()
     # print(dfPACE2023.head())
+
+
     data.append(dfPACE2023) # Se agrega a la lista de datos
 
-    dfSolicitudes = pd.read_excel(name, sheet_name= 3) # Se lee la tercera hoja del excel que contiene a los alumnos que solicitaron tutor
+    dfSolicitudes = pd.read_excel(name, sheet_name= 2) # Se lee la tercera hoja del excel que contiene a los alumnos que solicitaron tutor
     dfSolicitudes = dfSolicitudes.iloc[:, 0:14] # Se eliminan las columnas de los tutores que tienen asigandos los datos
     dfSolicitudes.drop("NOMBRE SOCIAL", axis=1, inplace=True) # Se elimina la columna de nombre social
     dfSolicitudes["RUT"] = dfSolicitudes["RUT_USACH"].astype(str).str.cat(dfSolicitudes["DV"].astype(str), sep="-") # Se crea la columna RUT con el rut y el digito verificador
@@ -83,9 +86,10 @@ def get_data(name):
 
     dfSolicitudes.columns = cambio_alumnos
 
-
+    # print("--------------------------------------------------------------------")
     # print("Solicitudes")
     # dfSolicitudes.info()
+    # print(dfSolicitudes.head())
 
     data.append(dfSolicitudes) # Se agrega a la lista de datos
 
@@ -98,9 +102,10 @@ def get_data(name):
 
     dfTutores.columns = cambio_tutores
 
-    #print("Tutores")
-    #dfTutores.info()
-
+    # print("--------------------------------------------------------------------")
+    # print("Tutores")
+    # dfTutores.info()
+    # print(dfTutores.head())
 
     data.append(dfTutores) # Se agrega a la lista de datos
 

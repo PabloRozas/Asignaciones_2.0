@@ -1,13 +1,17 @@
+import pandas as pd
+
 from Resource.change_data import transform_data_class
 from Resource.rw_data import get_data
+
+
 
 # Se leen los datos
 data = get_data("Resource\data.xlsx")
 
-print(data[0]) # Se imprime Pace
-print(data[1]) # Se imprime Solicitud
-print(data[2]) # Se imprime VAE
-print(data[3]) # Se imprime Tutores
+print(data[0].head())
+print(data[1].head())
+print(data[2].head())
+print(data[3].head())
 
 
 # fila 347 de data[2]
