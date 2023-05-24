@@ -109,8 +109,62 @@ def get_data(name):
 
     data.append(dfTutores) # Se agrega a la lista de datos
 
+    # limpieza_data(dfVAE2023, dfPACE2023, dfSolicitudes, dfTutores)
+
+
+    # ! --------- Se lee el archivo de carrera, facultad y areas ---------- ! #
+
+    dfCarreras = pd.read_csv("Resource\carreras.csv", sep= ",")
+    # todo: Se transforma la columna de carreras en una lista
+    carreras = dfCarreras.iloc[:,0].tolist()
+    print(carreras)
+    
+
+    dfFacultad = pd.read_csv("Resource\Facultad.csv", sep= ",")
+    # todo: Se transforma la columna de facultad en una lista
+    facultad = dfFacultad.iloc[:,0].tolist()
+    print(facultad)
+
+    dfAreas = pd.read_csv("Resource\Areas.csv", sep= ",")
+    # todo: Se transforma la columna de areas en una lista
+    areas = dfAreas.iloc[:,0].tolist()
+    print(areas)
+
+    # print("INGENIERÍA" in carreras)
+    # print("EXPLORA" in facultad)
+    # print("EXPLORA" in areas)
+
+
+
     return data
+
+
+def limpieza_data(dfVAE2023, dfPACE2023, dfSolucitudes, dfTutores):
+    aux = dfVAE2023["CARRERA"].tolist()
+    #quitar todos los elementos repetidos de la lista
+    aux = list(dict.fromkeys(aux))
+    pd.DataFrame(aux).to_csv("Resource\carreras.csv", sep= ",", index=False)
+
+    aux = dfVAE2023["FACULTAD"].tolist()
+    #quitar todos los elementos repetidos de la lista
+    aux = list(dict.fromkeys(aux))
+    pd.DataFrame(aux).to_csv("Resource\Facultad.csv", sep= "," , index=False)
+
+    aux = dfVAE2023["VÍA DE ACCESO"].tolist()
+    #quitar todos los elementos repetidos de la lista
+    aux = list(dict.fromkeys(aux))
+    pd.DataFrame(aux).to_csv("Resource\Areas.csv", sep= "," , index=False)
+
+    print(aux)
+
+
+
+
+
+
 
 
 def test():
     get_data("Resource\data.xlsx")
+
+test()
