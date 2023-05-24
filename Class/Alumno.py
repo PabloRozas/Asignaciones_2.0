@@ -12,3 +12,42 @@ class Alumno:
         self.telefono_1 = telefono_1
         self.telefono_2 = telefono_2
         self.matriculados2023 = matriculados2023
+
+    def get_rut(self):
+        return self.rut
+    
+    def get_nombre_completo(self):
+        return self.nombre_completo
+    
+    def get_carrera(self):
+        return self.carrera
+    
+    def get_facultad(self):
+        return self.facultad
+    
+    def get_via_acceso(self):
+        return self.via_acceso
+    
+    def get_via_paiep(self):
+        return self.via_paiep
+    
+    def get_ies_acompañamiento(self):
+        return self.ies_acompañamiento
+    
+    def get_correo_usach(self):
+        return self.correo_usach
+    
+    def get_correo_personal(self):
+        return self.correo_personal
+    
+    def get_telefono_1(self):
+        return self.telefono_1
+    
+    def get_telefono_2(self):
+        return self.telefono_2
+    
+    def get_matriculados2023(self):
+        return self.matriculados2023
+    
+    def print_alumno(self):
+        print(self.rut, self.nombre_completo, self.carrera, self.facultad, self.via_acceso, self.via_paiep, self.ies_acompañamiento, self.correo_usach, self.correo_personal, self.telefono_1, self.telefono_2, self.matriculados2023)
