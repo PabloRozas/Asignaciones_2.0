@@ -41,24 +41,66 @@ def transform_data_class(data):
 
 
     for index, fila in vae.iterrows():
-        alumno = Alumno(fila["RUT"], fila["NOMBRE COMPLETO"], fila["CARRERA"], fila["FACULTAD"], fila["VÍA DE ACCESO"], fila["VÍA PAIEP"], fila["IES ACOMPAÑAMIENTO"], fila["CORREO USACH"], fila["CORREO PERSONAL"], fila["TELÉFONO 1"], fila["TELÉFONO 2"], fila["MATRICULADOS 1s2023"])
+        alumno = Alumno(fila["RUT"], 
+                        fila["NOMBRE COMPLETO"], 
+                        fila["CARRERA"], 
+                        fila["FACULTAD"], 
+                        fila["VÍA DE ACCESO"], 
+                        fila["VÍA PAIEP"], 
+                        fila["IES ACOMPAÑAMIENTO"], 
+                        fila["CORREO USACH"], 
+                        fila["CORREO PERSONAL"], 
+                        fila["TELÉFONO 1"], 
+                        fila["TELÉFONO 2"], 
+                        fila["MATRICULADOS 1s2023"])
         alumnos_vae.add_alumno(alumno)
     # alumnos_vae.print_alumnos()
 
     alumnos_vae.get_alumno("21705466-4").print_alumno()
 
     for index, fila in pace.iterrows():
-        alumno = Alumno(fila["RUT"], fila["NOMBRE COMPLETO"], fila["CARRERA"], fila["FACULTAD"], fila["VÍA DE ACCESO"], fila["VÍA PAIEP"], fila["IES ACOMPAÑAMIENTO"], fila["CORREO USACH"], fila["CORREO PERSONAL"], fila["TELÉFONO 1"], fila["TELÉFONO 2"], fila["MATRICULADOS 1s2023"])
+        alumno = Alumno(fila["RUT"], 
+                        fila["NOMBRE COMPLETO"], 
+                        fila["CARRERA"], 
+                        fila["FACULTAD"], 
+                        fila["VÍA DE ACCESO"], 
+                        fila["VÍA PAIEP"], 
+                        fila["IES ACOMPAÑAMIENTO"], 
+                        fila["CORREO USACH"], 
+                        fila["CORREO PERSONAL"], 
+                        fila["TELÉFONO 1"], 
+                        fila["TELÉFONO 2"], 
+                        fila["MATRICULADOS 1s2023"])
         alumnos_pace.add_alumno(alumno)
     # alumnos_pace.print_alumnos()
 
     for index, fila in solicitudes.iterrows():
-        alumno = Alumno(fila["RUT"], fila["NOMBRE COMPLETO"], fila["CARRERA"], fila["FACULTAD"], fila["VÍA DE ACCESO"], fila["VÍA PAIEP"], fila["IES ACOMPAÑAMIENTO"], fila["CORREO USACH"], fila["CORREO PERSONAL"], fila["TELÉFONO 1"], fila["TELÉFONO 2"], fila["MATRICULADOS 1s2023"])
+        alumno = Alumno(fila["RUT"], 
+                        fila["NOMBRE COMPLETO"], 
+                        fila["CARRERA"], 
+                        fila["FACULTAD"], 
+                        fila["VÍA DE ACCESO"], 
+                        fila["VÍA PAIEP"], 
+                        fila["IES ACOMPAÑAMIENTO"], 
+                        fila["CORREO USACH"], 
+                        fila["CORREO PERSONAL"], 
+                        fila["TELÉFONO 1"], 
+                        fila["TELÉFONO 2"], 
+                        fila["MATRICULADOS 1s2023"])
         alumnos_solicitudes.add_alumno(alumno)
     # alumnos_solicitudes.print_alumnos()
 
     for index, fila in tutores.iterrows():
-        tutor = Tutor(fila["RUT"], fila["NOMBRE COMPLETO"], fila["CARRERA"], fila["FACULTAD"], fila["CORREO USACH"], fila["TELÉFONO 1"], fila["CORREO PERSONAL"], fila["ÁREA"], fila["SUB-ÁREA"], fila["HORAS"])
+        tutor = Tutor(fila["RUT"], 
+                      fila["NOMBRE COMPLETO"], 
+                      fila["CARRERA"], 
+                      fila["FACULTAD"], 
+                      fila["CORREO USACH"], 
+                      fila["TELÉFONO 1"], 
+                      fila["CORREO PERSONAL"], 
+                      fila["ÁREA"], 
+                      fila["SUB-ÁREA"], 
+                      fila["HORAS"])
         tutoresC.add_tutor(tutor)
     # tutoresC.print_tutores()
 
