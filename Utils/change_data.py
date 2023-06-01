@@ -1,7 +1,7 @@
 import sys
 import os
 
-from rw_data import get_data
+from Utils.rw_data import get_data
 
 # Obtiene la ruta absoluta de la carpeta actual
 current_folder = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +56,7 @@ def transform_data_class(data):
         alumnos_vae.add_alumno(alumno)
     # alumnos_vae.print_alumnos()
 
-    alumnos_vae.get_alumno("21705466-4").print_alumno()
+    # alumnos_vae.get_alumno("21705466").print_alumno()
 
     for index, fila in pace.iterrows():
         alumno = Alumno(fila["RUT"], 
@@ -104,7 +104,7 @@ def transform_data_class(data):
         tutoresC.add_tutor(tutor)
     # tutoresC.print_tutores()
 
-    tutoresC.get_tutor("20780420-7").print_tutor()
+    # tutoresC.get_tutor("20780420").print_tutor()
 
     return [alumnos_vae, alumnos_pace, alumnos_solicitudes, tutoresC]
 
@@ -112,6 +112,7 @@ def transform_data_class(data):
 
 def test():
     data = get_data("Resource\data.xlsx")
-    transform_data_class(data)
+    data2 = transform_data_class(data)
+    
 
 test()
