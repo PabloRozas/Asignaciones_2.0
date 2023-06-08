@@ -107,7 +107,7 @@ def get_data(name):
 
     # ? ----------------------------------------------------------------------------
 
-    return normalizar_data(data) # Se retorna la lista de datos normalizada
+    return normalizar_data(data, 1) # Se retorna la lista de datos normalizada
 
 
 def warning_data(data):
@@ -233,6 +233,20 @@ def normalizar_data(data, opcion = 0):
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.replace("ING.", "INGENIERIA")
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.replace("ING.", "INGENIERIA")
 
+    # Transformar todos los que contengan "INGE" a "INGENIERIA"
+    # dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.replace("INGE", "INGENIERIA")
+    # dfVAE2023["FACULTAD"] = dfVAE2023["FACULTAD"].str.replace("INGE", "INGENIERIA")
+    # dfVAE2023["VÍA DE ACCESO"] = dfVAE2023["VÍA DE ACCESO"].str.replace("INGE", "INGENIERIA")
+    # dfPACE2023["CARRERA"] = dfPACE2023["CARRERA"].str.replace("INGE", "INGENIERIA")
+    # dfPACE2023["FACULTAD"] = dfPACE2023["FACULTAD"].str.replace("INGE", "INGENIERIA")
+    # dfPACE2023["VÍA DE ACCESO"] = dfPACE2023["VÍA DE ACCESO"].str.replace("INGE", "INGENIERIA")
+    # dfSolicitudes["CARRERA"] = dfSolicitudes["CARRERA"].str.replace("INGE", "INGENIERIA")
+    # dfSolicitudes["FACULTAD"] = dfSolicitudes["FACULTAD"].str.replace("INGE", "INGENIERIA")
+    # dfSolicitudes["VÍA DE ACCESO"] = dfSolicitudes["VÍA DE ACCESO"].str.replace("INGE", "INGENIERIA")
+    # dfTutores["CARRERA"] = dfTutores["CARRERA"].str.replace("INGE", "INGENIERIA")
+    # dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.replace("INGE", "INGENIERIA")
+    # dfTutores["ÁREA"] = dfTutores["ÁREA"].str.replace("INGE", "INGENIERIA")
+
 
     # Quitar todos los EN de cada df
     dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.replace("EN ", "")
@@ -276,7 +290,7 @@ def normalizar_data(data, opcion = 0):
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.strip()
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.strip()
     
-    if (opcion == 0):
+    if (opcion == 1):
         # ? ------------------------------------------------------------------------------------------
         
         # Pasar de df carrera a un csv
