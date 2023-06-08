@@ -1,10 +1,12 @@
 class Alumno:
-    def __init__(self, rut, nombre_completo, carrera, facultad, via_acceso, via_paiep, ies_acompañamiento, correo_usach, correo_personal, telefono_1, telefono_2, matriculados2023):
+    def __init__(self, rut, nombre_completo, carrera, facultad, via_paiep, ies_acompañamiento, correo_usach, correo_personal, telefono_1, telefono_2, matriculados2023):
+        DISPONIBLE = 0
+        ASIGNADO = 1
+        ESPERA = 2
         self.rut = rut
         self.nombre_completo = nombre_completo
         self.carrera = carrera
         self.facultad = facultad
-        self.via_acceso = via_acceso
         self.via_paiep = via_paiep
         self.ies_acompañamiento = ies_acompañamiento
         self.correo_usach = correo_usach
@@ -12,6 +14,7 @@ class Alumno:
         self.telefono_1 = telefono_1
         self.telefono_2 = telefono_2
         self.matriculados2023 = matriculados2023
+        self.estado = DISPONIBLE
 
     def get_rut(self):
         return self.rut
@@ -24,9 +27,6 @@ class Alumno:
     
     def get_facultad(self):
         return self.facultad
-    
-    def get_via_acceso(self):
-        return self.via_acceso
     
     def get_via_paiep(self):
         return self.via_paiep
@@ -49,5 +49,10 @@ class Alumno:
     def get_matriculados2023(self):
         return self.matriculados2023
     
+    def set_estado(self, estado):
+        self.estado = estado
+    
     def print_alumno(self):
-        print(self.rut, self.nombre_completo, self.carrera, self.facultad, self.via_acceso, self.via_paiep, self.ies_acompañamiento, self.correo_usach, self.correo_personal, self.telefono_1, self.telefono_2, self.matriculados2023)
+        print(self.rut, self.nombre_completo, self.carrera, self.facultad,  self.via_paiep, self.ies_acompañamiento, self.correo_usach, self.correo_personal, self.telefono_1, self.telefono_2, self.matriculados2023)
+
+
