@@ -194,44 +194,56 @@ def normalizar_data(data, opcion = 0):
     dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfVAE2023["FACULTAD"] = dfVAE2023["FACULTAD"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfVAE2023["VÍA DE ACCESO"] = dfVAE2023["VÍA DE ACCESO"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    dfVAE2023["VÍA PAIEP"] = dfVAE2023["VÍA PAIEP"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfPACE2023["CARRERA"] = dfPACE2023["CARRERA"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfPACE2023["FACULTAD"] = dfPACE2023["FACULTAD"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfPACE2023["VÍA DE ACCESO"] = dfPACE2023["VÍA DE ACCESO"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    dfPACE2023["VÍA PAIEP"] = dfPACE2023["VÍA PAIEP"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfSolicitudes["CARRERA"] = dfSolicitudes["CARRERA"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfSolicitudes["FACULTAD"] = dfSolicitudes["FACULTAD"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfSolicitudes["VÍA DE ACCESO"] = dfSolicitudes["VÍA DE ACCESO"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    dfSolicitudes["VÍA PAIEP"] = dfSolicitudes["VÍA PAIEP"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfTutores["CARRERA"] = dfTutores["CARRERA"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
+    dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
 
     # Se transforma las columnas carrera, facultad, via de acceso de cada df a mayusculas
     dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.upper()
     dfVAE2023["FACULTAD"] = dfVAE2023["FACULTAD"].str.upper()
     dfVAE2023["VÍA DE ACCESO"] = dfVAE2023["VÍA DE ACCESO"].str.upper()
+    dfVAE2023["VÍA PAIEP"] = dfVAE2023["VÍA PAIEP"].str.upper()
     dfPACE2023["CARRERA"] = dfPACE2023["CARRERA"].str.upper()
     dfPACE2023["FACULTAD"] = dfPACE2023["FACULTAD"].str.upper()
     dfPACE2023["VÍA DE ACCESO"] = dfPACE2023["VÍA DE ACCESO"].str.upper()
+    dfPACE2023["VÍA PAIEP"] = dfPACE2023["VÍA PAIEP"].str.upper()
     dfSolicitudes["CARRERA"] = dfSolicitudes["CARRERA"].str.upper()
     dfSolicitudes["FACULTAD"] = dfSolicitudes["FACULTAD"].str.upper()
     dfSolicitudes["VÍA DE ACCESO"] = dfSolicitudes["VÍA DE ACCESO"].str.upper()
+    dfSolicitudes["VÍA PAIEP"] = dfSolicitudes["VÍA PAIEP"].str.upper()
     dfTutores["CARRERA"] = dfTutores["CARRERA"].str.upper()
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.upper()
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.upper()
+    dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.upper()
 
 
     # Transformar todos los que contengan "ING." a "INGENIERIA"
     dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.replace("ING.", "INGENIERIA")
     dfVAE2023["FACULTAD"] = dfVAE2023["FACULTAD"].str.replace("ING.", "INGENIERIA")
     dfVAE2023["VÍA DE ACCESO"] = dfVAE2023["VÍA DE ACCESO"].str.replace("ING.", "INGENIERIA")
+    dfVAE2023["VÍA PAIEP"] = dfVAE2023["VÍA PAIEP"].str.replace("ING.", "INGENIERIA")
     dfPACE2023["CARRERA"] = dfPACE2023["CARRERA"].str.replace("ING.", "INGENIERIA")
     dfPACE2023["FACULTAD"] = dfPACE2023["FACULTAD"].str.replace("ING.", "INGENIERIA")
     dfPACE2023["VÍA DE ACCESO"] = dfPACE2023["VÍA DE ACCESO"].str.replace("ING.", "INGENIERIA")
+    dfPACE2023["VÍA PAIEP"] = dfPACE2023["VÍA PAIEP"].str.replace("ING.", "INGENIERIA")
     dfSolicitudes["CARRERA"] = dfSolicitudes["CARRERA"].str.replace("ING.", "INGENIERIA")
     dfSolicitudes["FACULTAD"] = dfSolicitudes["FACULTAD"].str.replace("ING.", "INGENIERIA")
     dfSolicitudes["VÍA DE ACCESO"] = dfSolicitudes["VÍA DE ACCESO"].str.replace("ING.", "INGENIERIA")
+    dfSolicitudes["VÍA PAIEP"] = dfSolicitudes["VÍA PAIEP"].str.replace("ING.", "INGENIERIA")
     dfTutores["CARRERA"] = dfTutores["CARRERA"].str.replace("ING.", "INGENIERIA")
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.replace("ING.", "INGENIERIA")
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.replace("ING.", "INGENIERIA")
+    dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.replace("ING.", "INGENIERIA")
 
     # Transformar todos los que contengan "INGE" a "INGENIERIA"
     # dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.replace("INGE", "INGENIERIA")
@@ -252,48 +264,63 @@ def normalizar_data(data, opcion = 0):
     dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.replace("EN ", "")
     dfVAE2023["FACULTAD"] = dfVAE2023["FACULTAD"].str.replace("EN ", "")
     dfVAE2023["VÍA DE ACCESO"] = dfVAE2023["VÍA DE ACCESO"].str.replace("EN ", "")
+    dfVAE2023["VÍA PAIEP"] = dfVAE2023["VÍA PAIEP"].str.replace("EN ", "")
     dfPACE2023["CARRERA"] = dfPACE2023["CARRERA"].str.replace("EN ", "")
     dfPACE2023["FACULTAD"] = dfPACE2023["FACULTAD"].str.replace("EN ", "")
     dfPACE2023["VÍA DE ACCESO"] = dfPACE2023["VÍA DE ACCESO"].str.replace("EN ", "")
+    dfPACE2023["VÍA PAIEP"] = dfPACE2023["VÍA PAIEP"].str.replace("EN ", "")
     dfSolicitudes["CARRERA"] = dfSolicitudes["CARRERA"].str.replace("EN ", "")
     dfSolicitudes["FACULTAD"] = dfSolicitudes["FACULTAD"].str.replace("EN ", "")
     dfSolicitudes["VÍA DE ACCESO"] = dfSolicitudes["VÍA DE ACCESO"].str.replace("EN ", "")
+    dfSolicitudes["VÍA PAIEP"] = dfSolicitudes["VÍA PAIEP"].str.replace("EN ", "")
     dfTutores["CARRERA"] = dfTutores["CARRERA"].str.replace("EN ", "")
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.replace("EN ", "")
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.replace("EN ", "")
+    dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.replace("EN ", "")
 
     # Reemplazar los "  " por " "
     dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.replace("  ", " ")
     dfVAE2023["FACULTAD"] = dfVAE2023["FACULTAD"].str.replace("  ", " ")
     dfVAE2023["VÍA DE ACCESO"] = dfVAE2023["VÍA DE ACCESO"].str.replace("  ", " ")
+    dfVAE2023["VÍA PAIEP"] = dfVAE2023["VÍA PAIEP"].str.replace("  ", " ")
     dfPACE2023["CARRERA"] = dfPACE2023["CARRERA"].str.replace("  ", " ")
     dfPACE2023["FACULTAD"] = dfPACE2023["FACULTAD"].str.replace("  ", " ")
     dfPACE2023["VÍA DE ACCESO"] = dfPACE2023["VÍA DE ACCESO"].str.replace("  ", " ")
+    dfPACE2023["VÍA PAIEP"] = dfPACE2023["VÍA PAIEP"].str.replace("  ", " ")
     dfSolicitudes["CARRERA"] = dfSolicitudes["CARRERA"].str.replace("  ", " ")
     dfSolicitudes["FACULTAD"] = dfSolicitudes["FACULTAD"].str.replace("  ", " ")
     dfSolicitudes["VÍA DE ACCESO"] = dfSolicitudes["VÍA DE ACCESO"].str.replace("  ", " ")
+    dfSolicitudes["VÍA PAIEP"] = dfSolicitudes["VÍA PAIEP"].str.replace("  ", " ")
     dfTutores["CARRERA"] = dfTutores["CARRERA"].str.replace("  ", " ")
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.replace("  ", " ")
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.replace("  ", " ")
+    dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.replace("  ", " ")
 
     # Se quitan todos los espacios al inicio y al final
     dfVAE2023["CARRERA"] = dfVAE2023["CARRERA"].str.strip()
     dfVAE2023["FACULTAD"] = dfVAE2023["FACULTAD"].str.strip()
     dfVAE2023["VÍA DE ACCESO"] = dfVAE2023["VÍA DE ACCESO"].str.strip()
+    dfVAE2023["VÍA PAIEP"] = dfVAE2023["VÍA PAIEP"].str.strip()
     dfPACE2023["CARRERA"] = dfPACE2023["CARRERA"].str.strip()
     dfPACE2023["FACULTAD"] = dfPACE2023["FACULTAD"].str.strip()
     dfPACE2023["VÍA DE ACCESO"] = dfPACE2023["VÍA DE ACCESO"].str.strip()
+    dfPACE2023["VÍA PAIEP"] = dfPACE2023["VÍA PAIEP"].str.strip()
     dfSolicitudes["CARRERA"] = dfSolicitudes["CARRERA"].str.strip()
     dfSolicitudes["FACULTAD"] = dfSolicitudes["FACULTAD"].str.strip()
     dfSolicitudes["VÍA DE ACCESO"] = dfSolicitudes["VÍA DE ACCESO"].str.strip()
+    dfSolicitudes["VÍA PAIEP"] = dfSolicitudes["VÍA PAIEP"].str.strip()
     dfTutores["CARRERA"] = dfTutores["CARRERA"].str.strip()
     dfTutores["FACULTAD"] = dfTutores["FACULTAD"].str.strip()
     dfTutores["ÁREA"] = dfTutores["ÁREA"].str.strip()
+    dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.strip()
+
+    # Se cambia en sub area los que los que contengan MATEMATICAS por MATEMATICA
+    dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.replace("MATEMATICAS", "MATEMATICA")
     
     if (opcion == 1):
         # ? ------------------------------------------------------------------------------------------
         
-        # Pasar de df carrera a un csv
+        #* Pasar de df carrera a un csv
         dfCarrerasVAE = dfVAE2023["CARRERA"].drop_duplicates()
         dfCarrerasPACE = dfPACE2023["CARRERA"].drop_duplicates()
         dfCarrerasSolictudes = dfSolicitudes["CARRERA"].drop_duplicates()
@@ -310,7 +337,7 @@ def normalizar_data(data, opcion = 0):
         dfCarrerasSolictudes.to_csv("Resource\Solicitudes\Carreras.csv", index=False)
         dfCarrerasTutores.to_csv("Resource\Tutores\Carreras.csv", index=False)
 
-        # Pasar de df facultad a un csv
+        #* Pasar de df facultad a un csv
         dfFacultadVAE = dfVAE2023["FACULTAD"].drop_duplicates()
         dfFacultadPACE = dfPACE2023["FACULTAD"].drop_duplicates()
         dfFacultadSolictudes = dfSolicitudes["FACULTAD"].drop_duplicates()
@@ -327,7 +354,7 @@ def normalizar_data(data, opcion = 0):
         dfFacultadSolictudes.to_csv("Resource\Solicitudes\Facultad.csv", index=False)
         dfFacultadTutores.to_csv("Resource\Tutores\Facultad.csv", index=False)
 
-        # Pasar de df via de acceso a un csv
+        #* Pasar de df via de acceso a un csv
         dfViaVAE = dfVAE2023["VÍA DE ACCESO"].drop_duplicates()
         dfViaPACE = dfPACE2023["VÍA DE ACCESO"].drop_duplicates()
         dfViaSolictudes = dfSolicitudes["VÍA DE ACCESO"].drop_duplicates()
@@ -341,7 +368,7 @@ def normalizar_data(data, opcion = 0):
         dfViaPACE.to_csv("Resource\PACE\Acceso.csv", index=False)
         dfViaSolictudes.to_csv("Resource\Solicitudes\Acceso.csv", index=False)
 
-        # Pasar de df area a un csv
+        #* Pasar de df area a un csv
         dfAreaTutores = dfTutores["ÁREA"].drop_duplicates()
 
         # ! Ordenar de manera alfabetica
@@ -349,6 +376,27 @@ def normalizar_data(data, opcion = 0):
 
         dfAreaTutores.to_csv("Resource\Tutores\Area.csv", index=False)
 
+        #* Pasar de df subarea a un csv
+        dfSubAreaTutores = dfTutores["SUB-ÁREA"].drop_duplicates()
+
+        # ! Ordenar de manera alfabetica
+        dfSubAreaTutores = dfSubAreaTutores.sort_values()
+
+        dfSubAreaTutores.to_csv("Resource\Tutores\SubArea.csv", index=False)
+
+        #* Pasar de df via paiep a un csv
+        dfViaPaiepVAE = dfVAE2023["VÍA PAIEP"].drop_duplicates()
+        dfViaPaiepPACE = dfPACE2023["VÍA PAIEP"].drop_duplicates()
+        dfViaPaiepSolictudes = dfSolicitudes["VÍA PAIEP"].drop_duplicates()
+
+        # ! Ordenar de manera alfabetica
+        dfViaPaiepVAE = dfViaPaiepVAE.sort_values()
+        dfViaPaiepPACE = dfViaPaiepPACE.sort_values()
+        dfViaPaiepSolictudes = dfViaPaiepSolictudes.sort_values()
+
+        dfViaPaiepVAE.to_csv("Resource\VAE\Paiep.csv", index=False)
+        dfViaPaiepPACE.to_csv("Resource\PACE\Paiep.csv", index=False)
+        dfViaPaiepSolictudes.to_csv("Resource\Solicitudes\Paiep.csv", index=False)
 
 
         # ? --------------------------------------------------------------------------------------------------------------
@@ -410,6 +458,20 @@ def normalizar_data(data, opcion = 0):
         dfAreaTutores.to_csv("Resource\AreaTutores.csv", index=False)
 
         # ? --------------------------------------------------------------------------------------------------------------
+        # todo: Se crea el csv de subareas en general
+
+        dfSubAreaTutores.to_csv("Resource\SubAreaTutores.csv", index=False)
+
+        # ? --------------------------------------------------------------------------------------------------------------
+        # todo: Se crea el csv de vias de paiep en general
+        result = pd.merge(dfViaPaiepVAE, dfViaPaiepPACE, how='outer', on=['VÍA PAIEP'])
+        result = pd.merge(result, dfViaPaiepSolictudes, how='outer', on=['VÍA PAIEP'])
+
+        #Eliminar duplicados y ordenar
+        result = result.drop_duplicates()
+        result = result.sort_values(by=['VÍA PAIEP'])
+
+        result.to_csv("Resource\Paiep.csv", index=False)
 
     # Se transforman todos los nan en 0 de las columnas de TELÉFONO 1 y 2
 
