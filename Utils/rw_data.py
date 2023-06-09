@@ -51,7 +51,10 @@ def get_data(name):
     dfVAE2023asign_tut = pd.concat([dfVAE2023asign_tut, dfVAE2023.iloc[:, 23:26]], axis=1)
     dfVAE2023asign_tut = pd.concat([dfVAE2023asign_tut, dfVAE2023.iloc[:, 32:35]], axis=1)
     dfVAE2023asign_tut.columns = ["ÁREA TUTOR 1", "SUBÁREA TUTOR 1", "ESPECIALIDAD 1", "ÁREA TUTOR 2", "SUBÁREA TUTOR 2", "ESPECIALIDAD 2", "ÁREA TUTOR 3", "SUBÁREA TUTOR 3", "ESPECIALIDAD 3"]
-    dfVAE2023asign_tut = dfVAE2023asign_tut.replace(np.nan, '', regex=True) # Se reemplazan los valores NaN por un string vacio
+    #Se transforman los tipos de la columna a string
+    for col in dfVAE2023asign_tut.columns:
+        dfVAE2023asign_tut[col] = dfVAE2023asign_tut[col].astype(str)
+    dfVAE2023asign_tut = dfVAE2023asign_tut.replace("nan", "", regex=True) # Se reemplazan los nan por vacios
     dfVAE2023 = dfVAE2023.iloc[:, 0:14] # Se eliminan las columnas de los tutores que tienen asigandos los datos
     dfVAE2023.drop("NOMBRE SOCIAL", axis=1, inplace=True) # Se elimina la columna de nombre social
     dfVAE2023.drop("DV", axis=1, inplace=True) # Se elimina la columna de digito verificador
@@ -73,7 +76,11 @@ def get_data(name):
     dfPACE2023asign_tut = pd.concat([dfPACE2023asign_tut, dfPACE2023.iloc[:, 23:26]], axis=1)
     dfPACE2023asign_tut = pd.concat([dfPACE2023asign_tut, dfPACE2023.iloc[:, 32:35]], axis=1)
     dfPACE2023asign_tut.columns = ["ÁREA TUTOR 1", "SUBÁREA TUTOR 1", "ESPECIALIDAD 1", "ÁREA TUTOR 2", "SUBÁREA TUTOR 2", "ESPECIALIDAD 2", "ÁREA TUTOR 3", "SUBÁREA TUTOR 3", "ESPECIALIDAD 3"]
-    dfPACE2023asign_tut = dfPACE2023asign_tut.replace(np.nan, '', regex=True) # Se reemplazan los valores NaN por un string vacio
+    #Se transforman los tipos de la columna a string
+    for col in dfPACE2023asign_tut.columns:
+        dfPACE2023asign_tut[col] = dfPACE2023asign_tut[col].astype(str)
+    dfPACE2023asign_tut = dfPACE2023asign_tut.replace("nan", "", regex=True) # Se reemplazan los nan por vacios
+
     dfPACE2023 = dfPACE2023.iloc[:, 0:14] # Se eliminan las columnas de los tutores que tienen asigandos los datos
     dfPACE2023.drop("NOMBRE SOCIAL", axis=1, inplace=True) # Se elimina la columna de nombre social
     dfPACE2023.drop("DV", axis=1, inplace=True) # Se elimina la columna de digito verificador
@@ -94,17 +101,21 @@ def get_data(name):
     dfSolicitudesasign_tut = pd.concat([dfSolicitudesasign_tut, dfSolicitudes.iloc[:, 23:26]], axis=1)
     dfSolicitudesasign_tut = pd.concat([dfSolicitudesasign_tut, dfSolicitudes.iloc[:, 32:35]], axis=1)
     dfSolicitudesasign_tut.columns = ["ÁREA TUTOR 1", "SUBÁREA TUTOR 1", "ESPECIALIDAD 1", "ÁREA TUTOR 2", "SUBÁREA TUTOR 2", "ESPECIALIDAD 2", "ÁREA TUTOR 3", "SUBÁREA TUTOR 3", "ESPECIALIDAD 3"]
-    dfSolicitudesasign_tut = dfSolicitudesasign_tut.replace(np.nan, '', regex=True) # Se reemplazan los valores NaN por un string vacio
+    #Se transforman los tipos de la columna a string
+    for col in dfSolicitudesasign_tut.columns:
+        dfSolicitudesasign_tut[col] = dfSolicitudesasign_tut[col].astype(str)
+    dfSolicitudesasign_tut = dfSolicitudesasign_tut.replace("nan", '', regex=True) # Se reemplazan los valores NaN por un string vacio
+
     dfSolicitudes = dfSolicitudes.iloc[:, 0:14] # Se eliminan las columnas de los tutores que tienen asigandos los datos
     dfSolicitudes.drop("NOMBRE SOCIAL", axis=1, inplace=True) # Se elimina la columna de nombre social
     dfSolicitudes.drop("DV", axis=1, inplace=True) # Se elimina la columna de digito verificador
 
     dfSolicitudes.columns = cambio_alumnos
-
     #Se dejan todas las columnas como tipo object
     for col in dfSolicitudes.columns:
         dfSolicitudes[col] = dfSolicitudes[col].astype(str)
-
+    # dfPACE2023asign_tut.info()
+    # print(dfPACE2023asign_tut.head())
     dfSolicitudes = pd.concat([dfSolicitudes, dfSolicitudesasign_tut], axis=1)
     data.append(dfSolicitudes) # Se agrega a la lista de datos
     

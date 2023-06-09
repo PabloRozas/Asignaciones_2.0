@@ -51,7 +51,10 @@ def transform_data_class(data):
                         fila["CORREO PERSONAL"], 
                         fila["TELÉFONO 1"], 
                         fila["TELÉFONO 2"], 
-                        fila["MATRICULADOS 1s2023"])
+                        fila["MATRICULADOS 1s2023"],
+                        [fila["ÁREA TUTOR 1"], fila["ÁREA TUTOR 2"], fila["ÁREA TUTOR 3"]],
+                        [fila["SUBÁREA TUTOR 1"], fila["SUBÁREA TUTOR 2"], fila["SUBÁREA TUTOR 3"]],
+                        [fila["ESPECIALIDAD 1"], fila["ESPECIALIDAD 2"], fila["ESPECIALIDAD 3"]])
         alumnos_vae.add_alumno(alumno)
     # alumnos_vae.print_alumnos()
 
@@ -68,7 +71,10 @@ def transform_data_class(data):
                         fila["CORREO PERSONAL"], 
                         fila["TELÉFONO 1"], 
                         fila["TELÉFONO 2"], 
-                        fila["MATRICULADOS 1s2023"])
+                        fila["MATRICULADOS 1s2023"],
+                        [fila["ÁREA TUTOR 1"], fila["ÁREA TUTOR 2"], fila["ÁREA TUTOR 3"]],
+                        [fila["SUBÁREA TUTOR 1"], fila["SUBÁREA TUTOR 2"], fila["SUBÁREA TUTOR 3"]],
+                        [fila["ESPECIALIDAD 1"], fila["ESPECIALIDAD 2"], fila["ESPECIALIDAD 3"]])
         alumnos_pace.add_alumno(alumno)
     # alumnos_pace.print_alumnos()
 
@@ -83,7 +89,10 @@ def transform_data_class(data):
                         fila["CORREO PERSONAL"], 
                         fila["TELÉFONO 1"], 
                         fila["TELÉFONO 2"], 
-                        fila["MATRICULADOS 1s2023"])
+                        fila["MATRICULADOS 1s2023"],
+                        [fila["ÁREA TUTOR 1"], fila["ÁREA TUTOR 2"], fila["ÁREA TUTOR 3"]],
+                        [fila["SUBÁREA TUTOR 1"], fila["SUBÁREA TUTOR 2"], fila["SUBÁREA TUTOR 3"]],
+                        [fila["ESPECIALIDAD 1"], fila["ESPECIALIDAD 2"], fila["ESPECIALIDAD 3"]])
         alumnos_solicitudes.add_alumno(alumno)
     # alumnos_solicitudes.print_alumnos()
 
@@ -111,5 +120,3 @@ def test():
     data = get_data("Resource\data.xlsx")
     data2 = transform_data_class(data)
     
-
-test()
