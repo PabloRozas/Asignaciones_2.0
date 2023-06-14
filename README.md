@@ -40,10 +40,10 @@ En el caso para los datos de los estudiantes:
 
 y seguido de estas columnas, en las columnas con indice de la 14 a la 16, 23 a la 25 y 32 a la 34, se deben ingresar los datos de la solicitud de los tutores, en el siguiente formato:
 
-|ÁREA TUTOR/A **N**|SUBÁREA TUTOR/A **N**|ESPECIALIDAD|
+|ÁREA TUTOR/A <span style="color:red;">N</span>|SUBÁREA TUTOR/A <span style="color:red;">N</span>|ESPECIALIDAD|
 |---|---|---|
 
-donde **N** debe ser un numero entero que va desde 1 hasta 3.
+donde <span style="color:red;">N</span> debe ser un numero entero que va desde 1 hasta 3.
 
 Para el caso de los tutores, el excel debe seguir el siguiente formato:
 
