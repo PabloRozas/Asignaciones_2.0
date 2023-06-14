@@ -36,14 +36,17 @@ El excel de donde se leerán los datos debe seguir el siguiente formato:
 En el caso para los datos de los estudiantes:
 
 |RUT_USACH|DV|NOMBRE COMPLETO|NOMBRE SOCIAL|CARRERA|UNIDAD ACADÉMICA|VÍA DE ACCESO|VÍA PAIEP|IES ACOMPAÑAMIENTO|CORREO USACH|CORREO PERSONAL|TELÉFONO 1|TELÉFONO 2|MATRICULADO 1s2023 (SI/NO)|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 
 y seguido de estas columnas, en las columnas con indice de la 14 a la 16, 23 a la 25 y 32 a la 34, se deben ingresar los datos de la solicitud de los tutores, en el siguiente formato:
 
 |ÁREA TUTOR/A **N**|SUBÁREA TUTOR/A **N**|ESPECIALIDAD|
+|---|---|---|
 
 donde **N** debe ser un numero entero que va desde 1 hasta 3.
 
 Para el caso de los tutores, el excel debe seguir el siguiente formato:
 
 |RUT|NOMBRE COMPLETO|CARRERA|FACULTAD|CORREO USACH|TELÉFONO TUTOR/A|CORREO PERSONAL|ÁREA|Subárea|N° de horas|
+|---|---|---|---|---|---|---|---|---|---|
 
