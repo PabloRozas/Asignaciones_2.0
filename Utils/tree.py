@@ -1,5 +1,10 @@
 from Utils.rw_data import get_data
 from Utils.change_data import transform_data_class
+from Class.Alumnos_Tutores import Alumnos_Tutores
+from Class.Alumno import Alumno
+from Class.Tutor import Tutor
+from Class.Alumnos import Alumnos
+from Class.Tutores import Tutores
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -22,18 +27,36 @@ def tree(tolerance=0.1):
     alumnos_tolerance = []
     alumnos_1ro = alumnos_primero.get_alumnos()
     print("Alumnos primer año antes de tolerancia: ", len(alumnos_1ro))
+    texto1 = "Alumnos primer año antes de tolerancia: " + str(len(alumnos_1ro)) + "\n"
     alumnos_tolerance = alumnos_1ro[int(len(alumnos_1ro) - len(alumnos_1ro)*tolerance):]
     alumnos_1ro = alumnos_1ro[:int(len(alumnos_1ro) - len(alumnos_1ro)*tolerance)]
     print("Alumnos primer año despues de tolerancia: ", len(alumnos_1ro))
     print("Alumnos primer año sacados por tolerancia: ", len(alumnos_tolerance))
 
-    # ? ------------------------ Arbol de decisión ---------------------------
-    #* Se crea la lista de alumnos que se van a asignar a tutores
-    Alumnos_Asignacion = alumnos_1ro
-
-    for alumno in alumnos_segundo.get_alumnos():
-        Alumnos_Asignacion.append(alumno)
     
+    texto2 = "Alumnos primer año despues de tolerancia: " + str(len(alumnos_1ro)) + "\n"
+    texto3 = "Alumnos primer año sacados por tolerancia: " + str(len(alumnos_tolerance))
+
+
+    # ? ------------------------ Arbol de decisión ---------------------------
+    #* Se crea la lista de alumnos que se van a asignar a tutores de primer año que necesiten acompañamiento en matematicas
+    Alumnos_Asignacion = Alumnos()
+
+    for alumno in alumnos_1ro:
+        if "NO ASIGNADO" not in alumno.get_solicitud_esp():
+            Alumnos_Asignacion.add_alumno(alumno)
+    
+    for alumno in alumnos_segundo.get_alumnos():
+        if "NO ASIGNADO" not in alumno.get_solicitud_esp():
+            Alumnos_Asignacion.add_alumno(alumno)
+
+
+    Alumnos_Asignacion.print_alumnos()
+    print("Total alumnos asignados: ", Alumnos_Asignacion.get_total())
+
+
+    # Alumnos_Asignacion.print_alumnos()
+
     # i = 0
     # for alumno in Alumnos_Asignacion:
     #     alumno.print_alumno()
@@ -44,5 +67,7 @@ def tree(tolerance=0.1):
     
     #* Se comienza el ciclo del arbol de desición
 
-        
+    # for alumno in Alumnos_Asignacion:
 
+
+    return texto1 + texto2 + texto3
