@@ -1,6 +1,7 @@
 import sys
 import os
 from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
 
 # Obtiene la ruta absoluta de la carpeta actual
 current_folder = os.path.dirname(os.path.abspath(__file__))
@@ -25,10 +26,10 @@ class_folder = os.path.abspath(os.path.join(current_folder, '..', 'Resources'))
 # Agrega la ruta de la carpeta Class al sistema de búsqueda de módulos
 sys.path.append(class_folder)
 
-class MiInterfaz(QtWidgets.QMainWindow):
+class MiInterfaz(QtWidgets.QMainWindow): # Hereda de QMainWindow
     def __init__(self):
-        super().__init__()
-        self.init_ui()
+        super().__init__() # Llama al constructor de QMainWindow
+        self.init_ui() # Llama al método que inicializa la interfaz (Configuración del diseño)
 
     def init_ui(self):
         # Configura los componentes de tu interfaz aquí
@@ -36,11 +37,14 @@ class MiInterfaz(QtWidgets.QMainWindow):
         self.setGeometry(100, 100, 400, 300)
         self.central_widget = QtWidgets.QWidget(self) 
         # self.showMaximized()
-        self.setWindowIcon(QtGui.QIcon("Images/Logo.png"))
         self.setWindowState(QtCore.Qt.WindowMaximized)
         self.setCentralWidget(self.central_widget)
         self.grid_layout = QtWidgets.QGridLayout(self.central_widget)
         self.grid_layout.setAlignment(QtCore.Qt.AlignCenter)
+
+
+
+
         
         # Crea un label en el centro
         self.input_text = QtWidgets.QLineEdit(self)
@@ -66,7 +70,10 @@ class MiInterfaz(QtWidgets.QMainWindow):
 
     def ejecutar_funcion(self):
         # Aquí puedes llamar a tu función específica de Python
+
         texto = self.input_text.text()
+        if texto == "":
+            texto = "0.1"
         float_texto = float(texto)
         resultado = tree(float_texto)  # Llama a tu función y obtén el resultado
         self.resultado_label.setText(str(resultado))
