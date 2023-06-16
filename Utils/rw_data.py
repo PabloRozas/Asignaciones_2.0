@@ -590,6 +590,33 @@ def normalizar_data(data, opcion = 0):
         dfViaPaiepPACE.to_csv("Resource\PACE\Paiep.csv", index=False)
         dfViaPaiepSolictudes.to_csv("Resource\Solicitudes\Paiep.csv", index=False)
 
+        #* Pasar de df solicitud area a un csv
+        dfSolicitudArea = pd.concat([dfVAE2023["ÁREA TUTOR 1"], dfVAE2023["ÁREA TUTOR 2"], dfVAE2023["ÁREA TUTOR 3"], dfPACE2023["ÁREA TUTOR 1"], dfPACE2023["ÁREA TUTOR 2"], dfPACE2023["ÁREA TUTOR 3"], dfSolicitudes["ÁREA TUTOR 1"], dfSolicitudes["ÁREA TUTOR 2"], dfSolicitudes["ÁREA TUTOR 3"]])
+        dfSolicitudArea = dfSolicitudArea.drop_duplicates()
+        
+        # ! Ordenar de manera alfabetica
+        dfSolicitudArea = dfSolicitudArea.sort_values()
+        
+        dfSolicitudArea.to_csv("Resource\SolicitudesArea.csv", index=False)
+
+        #* Pasar de df solicitud subarea a un csv
+        dfSolicitudSubArea = pd.concat([dfVAE2023["SUBÁREA TUTOR 1"], dfVAE2023["SUBÁREA TUTOR 2"], dfVAE2023["SUBÁREA TUTOR 3"], dfPACE2023["SUBÁREA TUTOR 1"], dfPACE2023["SUBÁREA TUTOR 2"], dfPACE2023["SUBÁREA TUTOR 3"], dfSolicitudes["SUBÁREA TUTOR 1"], dfSolicitudes["SUBÁREA TUTOR 2"], dfSolicitudes["SUBÁREA TUTOR 3"]])
+        dfSolicitudSubArea = dfSolicitudSubArea.drop_duplicates()
+
+        # ! Ordenar de manera alfabetica
+        dfSolicitudSubArea = dfSolicitudSubArea.sort_values()
+
+        dfSolicitudSubArea.to_csv("Resource\SolicitudesSubArea.csv", index=False)
+
+        #* Pasar de df especialidad a un csv
+        dfEspecialidad = pd.concat([dfVAE2023["ESPECIALIDAD 1"], dfVAE2023["ESPECIALIDAD 2"], dfVAE2023["ESPECIALIDAD 3"], dfPACE2023["ESPECIALIDAD 1"], dfPACE2023["ESPECIALIDAD 2"], dfPACE2023["ESPECIALIDAD 3"], dfSolicitudes["ESPECIALIDAD 1"], dfSolicitudes["ESPECIALIDAD 2"], dfSolicitudes["ESPECIALIDAD 3"]])
+        dfEspecialidad = dfEspecialidad.drop_duplicates()
+        
+        # ! Ordenar de manera alfabetica
+        dfEspecialidad = dfEspecialidad.sort_values()
+
+        dfEspecialidad.to_csv("Resource\Especialidad.csv", index=False)
+
 
         # ? --------------------------------------------------------------------------------------------------------------
         # todo: Crear csv de carreras por facultad
