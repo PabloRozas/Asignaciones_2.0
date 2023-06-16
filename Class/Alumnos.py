@@ -14,12 +14,17 @@ class Alumnos:
                 return alumno
         return None
     
+    def get_total(self):
+        return len(self.alumnos)
+    
     def set_alumnos(self, alumnos):
         self.alumnos = alumnos
     
     def print_alumnos(self):
         for alumno in self.alumnos:
-            print(alumno.rut, alumno.nombre_completo, alumno.carrera, alumno.facultad, alumno.via_acceso, alumno.via_paiep, alumno.ies_acompañamiento, alumno.correo_usach, alumno.correo_personal, alumno.telefono_1, alumno.telefono_2, alumno.matriculados2023)
+            print(alumno.rut, alumno.nombre_completo, alumno.carrera, alumno.facultad, alumno.via_paiep, alumno.ies_acompañamiento, alumno.correo_usach, alumno.correo_personal, alumno.telefono_1, alumno.telefono_2, alumno.matriculados2023)
+            print("Estado: ", alumno.estado)
+            print("Solicitud: ", alumno.solicitud_area, alumno.solicitud_subarea, alumno.solicitud_esp)
 
     def get_PACE(self):
         alumnos = []

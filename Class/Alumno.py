@@ -54,6 +54,18 @@ class Alumno:
     def get_matriculados2023(self):
         return self.matriculados2023
     
+    def get_estado(self):
+        return self.estado
+    
+    def get_solicitud_area(self):
+        return self.solicitud_area
+    
+    def get_solicitud_subarea(self):
+        return self.solicitud_subarea
+    
+    def get_solicitud_esp(self):
+        return self.solicitud_esp
+    
     def change_asignado(self):
         self.estado = 1
     
