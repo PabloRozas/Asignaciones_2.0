@@ -41,6 +41,7 @@ def tree(tolerance=0.1):
     # ? ------------------------ Arbol de decisión ---------------------------
     #* Se crea la lista de alumnos que se van a asignar a tutores de primer año que necesiten acompañamiento en matematicas
     Alumnos_Asignacion = Alumnos()
+    Alumnos_Asignacion_Solicitudes = Alumnos()
 
     for alumno in alumnos_1ro:
         if "NO ASIGNADO" not in alumno.get_solicitud_esp():
@@ -50,10 +51,29 @@ def tree(tolerance=0.1):
         if "NO ASIGNADO" not in alumno.get_solicitud_esp():
             Alumnos_Asignacion.add_alumno(alumno)
 
+    for alumno in alumnos_solicitudes.get_alumnos():
+        if "NO ASIGNADO" not in alumno.get_solicitud_esp():
+            Alumnos_Asignacion_Solicitudes.add_alumno(alumno)
 
-    Alumnos_Asignacion.print_alumnos()
-    print("Total alumnos asignados: ", Alumnos_Asignacion.get_total())
 
+    # Alumnos_Asignacion.print_alumnos()
+    Alumnos_Asignacion.to_csv("Resource\Alumnos_Asignacion.csv")
+    print("--------------------------------------------------------------------")
+    # Alumnos_Asignacion_Solicitudes.print_alumnos()
+    Alumnos_Asignacion_Solicitudes.to_csv("Resource\Alumnos_Asignacion_Solicitudes.csv")
+    print("Total alumnos en asignación primer y segundo semestre: ", Alumnos_Asignacion.get_total())
+    print("Total alumnos en asignación Solicitudes: ", Alumnos_Asignacion_Solicitudes.get_total())
+
+    tutoresMate = tutoresC.get_AMate()
+    tutoresAignacion = Tutores()
+
+    for tutor in tutoresMate:
+        tutoresAignacion.add_tutor(tutor)
+
+    tutoresAignacion.to_csv("Resource\TutoresAsignacion.csv")
+
+    print("Total tutores en asignación: ", tutoresAignacion.get_total())
+    print("Total de Asignaciones: ", Alumnos_Asignacion.get_total() + Alumnos_Asignacion_Solicitudes.get_total())
 
     # Alumnos_Asignacion.print_alumnos()
 
