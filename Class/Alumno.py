@@ -21,6 +21,10 @@ class Alumno:
         self.solicitud_subarea = solicitud_subarea
         self.solicitud_esp = solicitud_esp
 
+        # Nivel de estudiante
+        # Corresponde al semestre en el que se encuentra el estudiante (en evaluación si se mantiene)
+        self.nivel = 0
+
     def get_rut(self):
         return self.rut
     
@@ -75,7 +79,13 @@ class Alumno:
     def change_parcial(self):
         self.estado = 3
 
+    def change_nivel(self, nivel):
+        self.nivel = nivel
+
     def print_alumno(self):
+        print("---------------------------------------------------------------------")
+        print("Alumno: ")
+        print("Nivel: ", self.nivel)
         print(self.rut, self.nombre_completo, self.carrera, self.facultad,  self.via_paiep, self.ies_acompañamiento, self.correo_usach, self.correo_personal, self.telefono_1, self.telefono_2, self.matriculados2023)
         print("Estado: ", self.estado)
         print("Solicitud: ", self.solicitud_area, self.solicitud_subarea, self.solicitud_esp)

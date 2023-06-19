@@ -57,7 +57,10 @@ def transform_data_class(data):
                         [fila["ÁREA TUTOR 1"], fila["ÁREA TUTOR 2"], fila["ÁREA TUTOR 3"]],
                         [fila["SUBÁREA TUTOR 1"], fila["SUBÁREA TUTOR 2"], fila["SUBÁREA TUTOR 3"]],
                         aux)
+        alumno.change_nivel(1)
+
         alumnos_vae.add_alumno(alumno)
+
     # alumnos_vae.print_alumnos()
 
     # alumnos_vae.get_alumno("21705466").print_alumno()
