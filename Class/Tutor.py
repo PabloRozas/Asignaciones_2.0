@@ -42,10 +42,12 @@ class Tutor:
             self.subarea.append("PENSAMIENTO MATEMATICO")
         elif ("CALCULO II" in self.subarea):
             self.subarea.append("ALGEBRA I Y CALCULO I")
+            self.subarea.append("ALGEBRA II Y CALCULO II")
             self.subarea.append("MATEMATICA II")
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
         elif ("CALCULO I" in self.subarea):
+            self.subarea.append("ALGEBRA I Y CALCULO I")
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
         elif ("ALGEBRA II Y CALCULO II" in self.subarea):
