@@ -12,6 +12,7 @@ class Tutor:
         self.horas = horas   
         self.asignado = False 
         self.cant_tutorados = 0
+        self.level = 0
 
         if(self.horas == "nan"):
             self.horas = 0
@@ -33,6 +34,7 @@ class Tutor:
             self.subarea.append("MATEMATICA II")
             self.subarea.append("MATEMATICA III")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 5
         elif ("ECUACIONES DIFERENCIALES" in self.subarea):
             self.subarea.append("ALGEBRA II Y CALCULO II")
             self.subarea.append("ALGEBRA I Y CALCULO I")
@@ -40,39 +42,48 @@ class Tutor:
             self.subarea.append("MATEMATICA II")
             self.subarea.append("MATEMATICA III")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 5
         elif ("CALCULO II" in self.subarea):
             self.subarea.append("ALGEBRA I Y CALCULO I")
             self.subarea.append("ALGEBRA II Y CALCULO II")
             self.subarea.append("MATEMATICA II")
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 4
         elif ("CALCULO I" in self.subarea):
             self.subarea.append("ALGEBRA I Y CALCULO I")
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 3
         elif ("ALGEBRA II Y CALCULO II" in self.subarea):
             self.subarea.append("ALGEBRA I Y CALCULO I")
             self.subarea.append("MATEMATICA II")
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 4
         elif ("ALGEBRA I Y CALCULO I" in self.subarea):
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 3
         elif ("MATEMATICA III" in self.subarea):
             self.subarea.append("MATEMATICA II")
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 4
         elif ("MATEMATICA II" in self.subarea):
             self.subarea.append("MATEMATICA I")
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 3
         elif ("MATEMATICA I" in self.subarea):
             self.subarea.append("PENSAMIENTO MATEMATICO")
+            self.level = 2
+        elif ("PENSAMIENTO MATEMATICO" in self.subarea):
+            self.level = 1
+        if ("ESTADISTICA Y PROBABILIDAD" in self.subarea):
+            self.subarea.append("ESTADISTICA")
+            # ! Falta agregar el nivel de estadistica
 
 
-
-        # # Se asigna un nivel de prioridad a cada tutor
-        # self.level = 0
-        # if (self.area == "MATEMATICAS" and self.subarea == ""):
 
 
     def get_rut(self):
@@ -106,7 +117,7 @@ class Tutor:
         return self.horas
     
     def print_tutor(self):
-        print(self.rut, self.nombre_completo, self.carrera, self.facultad, self.correo_usach, self.telefono_1, self.correo_personal, self.area, self.subarea, self.horas, self.asignado)
+        print(self.rut, self.nombre_completo, self.carrera, self.facultad, self.correo_usach, self.telefono_1, self.correo_personal, self.area, self.subarea, self.horas, self.asignado, self.cant_tutorados, self.level)
 
     def is_asign(self):
         self.asignado = True
