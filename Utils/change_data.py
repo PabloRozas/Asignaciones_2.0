@@ -41,7 +41,7 @@ def transform_data_class(data):
 
 
     for index, fila in vae.iterrows():
-        aux = especialidades(fila)
+        aux = especialidad_primerSemestre(fila) 
 
         alumno = Alumno(fila["RUT"], 
                         fila["NOMBRE COMPLETO"], 
@@ -217,6 +217,26 @@ def especialidades(fila):
 
     return aux2
 
+def especialidad_primerSemestre(fila):
+    aux = []
+    aux2 = []
+    if (fila["FACULTAD"] == "FACULTAD DE INGENERIIA" or fila["FACULTAD"] == "FACULTAD DE INGENIERIA" or fila["FACULTAD"] == "FACULTAD TECNOLOGICA"):
+        aux.append("ALGEBRA I Y CALCULO I")
+    elif (fila["FACULTAD"] == "FACULTAD DE ADMINISTRACION Y ECONOMIA"):
+        aux.append("MATEMATICA I")
+    elif (fila["FACULTAD"] == "BACHILLERATO CIENCIAS Y HUMANIDADES" or fila["FACULTAD"] == "PROGRAMA DE BACHILLERATO CIENCIAS Y HUMANIDADES"):
+        aux.append("PENSAMIENTO MATEMATICO")
+    elif (fila["FACULTAD"] == "FACULTAD DE QUIMICA Y BIOLOGIA"):
+        aux.append("ALGEBRA II Y CALCULO II")
+    else:
+        aux.append("NO ASIGNADO")
+
+    # Eliminar repetidos en la lista auxiliar
+    for i in aux:
+        if (i not in aux2 and not(len(aux2) > 0 and i == "NO ASIGNADO")):
+            aux2.append(i)
+
+    return aux2
 
 
 def test():
