@@ -116,6 +116,9 @@ class Tutor:
     def get_horas(self):
         return self.horas
     
+    def set_horas(self, horas):
+        self.horas = horas
+    
     def print_tutor(self):
         print(self.rut, self.nombre_completo, self.carrera, self.facultad, self.correo_usach, self.telefono_1, self.correo_personal, self.area, self.subarea, self.horas, self.asignado, self.cant_tutorados, self.level)
 

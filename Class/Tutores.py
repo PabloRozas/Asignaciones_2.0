@@ -52,6 +52,10 @@ class Tutores:
                 tutores.append(tutor)
         return tutores
     
+    def sort_tutores(self):
+        self.tutores.sort(key=lambda x: len(x.subarea))
+
+    
     def to_csv(self, path):
         # Se transforma la lista de tutores a un dataframe
         df = pd.DataFrame(columns=['rut', 'nombre_completo', 'carrera', 'facultad', 'correo_usach', 'telefono_1', 'correo_personal', 'area', 'subarea', 'horas', 'nivel'])
