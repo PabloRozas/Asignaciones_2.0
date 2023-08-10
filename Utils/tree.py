@@ -86,8 +86,66 @@ def tree(tolerance=0.1):
     
     
     #* Se comienza el ciclo del arbol de desición
+    asignaciones = Alumnos_Tutores()
 
-    # for alumno in Alumnos_Asignacion:
+    for alumno in Alumnos_Asignacion.get_alumnos():
+        # Se crea el grupo de tutores para la persona
+        grupo_tutores = Tutores()
+        for tutor in tutoresAignacion.get_tutores():
+            if alumno.get_solicitud_esp()[0] in tutor.get_subarea():
+                grupo_tutores.add_tutor(tutor)
+        # Se ordena de menor a mayor los tutores segun el largo de su lista de subareas
+        grupo_tutores.sort_tutores()
+        
+        for tutor in grupo_tutores.get_tutores():
+            if tutor.get_carrera() == alumno.get_carrera():
+                if tutor.get_horas() > 0:
+                    alumno.change_asignado()
+                    asignaciones.add_alumno_tutor(alumno, tutor)
+                    tutor.set_horas(tutor.get_horas() - 1)
+                    break
+                else:
+                    continue
+            else:
+                if tutor.get_facultad() == alumno.get_facultad():
+                    if tutor.get_horas() > 0:
+                        alumno.change_asignado()
+                        asignaciones.add_alumno_tutor(alumno, tutor)
+                        tutor.set_horas(tutor.get_horas() - 1)
+                        break
+                    else:
+                        continue
+                else:
+                    alumno.change_espera()
+                    break
+    asignaciones.to_csv("Resource\Asignaciones.csv")
+    
+    for almuno in Alumnos_Asignacion.get_alumnos():
+        if almuno.get_estado() == 2:
+            grupo_tutores_espera = Tutores()
+            for tutor in tutoresAignacion.get_tutores():
+                if almuno.get_solicitud_esp()[0] in tutor.get_subarea():
+                    grupo_tutores_espera.add_tutor(tutor)
+            # Se ordena de menor a mayor los tutores segun el largo de su lista de subareas
+            grupo_tutores_espera.sort_tutores()
 
+            for tutor in grupo_tutores_espera.get_tutores():
+                if tutor.get_horas() > 0:
+                    almuno.change_asignado()
+                    asignaciones.add_alumno_tutor(almuno, tutor)
+                    tutor.set_horas(tutor.get_horas() - 1)
+                    break
+                else:
+                    continue
+    asignaciones.to_csv("Resource\Asignaciones.csv")
+    print("Total de asignaciones: ", asignaciones.get_total())
+
+
+    
+
+
+
+
+    
 
     return texto1 + texto2 + texto3
