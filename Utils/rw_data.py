@@ -508,6 +508,9 @@ def normalizar_data(data, opcion = 0):
 
     # Se cambia en sub area los que los que contengan MATEMATICAS por MATEMATICA
     dfTutores["SUB-ÁREA"] = dfTutores["SUB-ÁREA"].str.replace("MATEMATICAS", "MATEMATICA")
+
+    # Se cambia las horas de los tutores de tipo string a int
+    dfTutores["HORAS"] = dfTutores["HORAS"].astype(int)
     
     if (opcion == 1):
         # ? ------------------------------------------------------------------------------------------
