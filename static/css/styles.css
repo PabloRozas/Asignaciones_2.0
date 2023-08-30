@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Bebas Neue Pro SemiExp';
+    src: url('fonts/BebasNeuePro-SemiExpBold.ttf') format('truetype');
+    
+}
+
+.navbar-custom {
+    background-color: #00A499; 
+}
+
+.navbar-item-white {
+    color: #fff;
+    font-family: 'Bebas Neue Pro SemiExp';
+}
+
+.navbar-brand-white {
+    color: #fff;
+    font-family: 'Bebas Neue Pro SemiExp';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+}
+
+
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 65px);
+    
+}
+
+
+/* Estilos personalizados para la tabla */
+.custom-table {
+    background-color: #f3f3f3; /* Color de fondo de la tabla */
+}
+
+.custom-table th, .custom-table td {
+    background-color: #ecf4fc; /* Color de fondo de las celdas */
+    color: #333333; /* Color del texto en las celdas */
+}
+
+/* Cambiar el color de los encabezados de la tabla */
+.custom-table th {
+    background-color: #394049;
+    color: #ffffff;
+}
+
+.img-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.color-btn {
+    background-color: #ed8318;
+    color: #fff;
+    /* color del borde */
+    border-color: #ed8318;
+}

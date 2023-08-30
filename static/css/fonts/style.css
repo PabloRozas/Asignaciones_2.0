@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: local('Bebas Neue Pro SemiExpanded Bold'), local('Bebas-Neue-Pro-SemiExpanded-Bold'),
+        url('BebasNeuePro-SemiExpBold.woff2') format('woff2'),
+        url('BebasNeuePro-SemiExpBold.woff') format('woff'),
+        url('BebasNeuePro-SemiExpBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }

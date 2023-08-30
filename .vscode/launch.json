@@ -8,7 +8,7 @@
             "name": "Python: archivo actual",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/main.py",
+            "program": "${workspaceFolder}/main3.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }

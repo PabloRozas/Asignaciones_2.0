@@ -32,7 +32,7 @@ El proyecto se divide en 4 carpetas principales:
 
 ## Estructura de los datos Ingresados
 
-El excel de donde se leerán los datos debe seguir el siguiente formato:
+El excel de donde se leerán los datos debe seguir el siguiente formato (Se debe Seguir el nombre de los encabezados de las columnas, no es necesario que se llamen de la misma forma):
 
 En el caso para los datos de los estudiantes:
 

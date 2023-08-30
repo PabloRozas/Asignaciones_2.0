@@ -1,10 +1,16 @@
 class Alumno:
-    def __init__(self, rut, nombre_completo, carrera, facultad, via_paiep, ies_acompañamiento, correo_usach, correo_personal, telefono_1, telefono_2, matriculados2023, solicitud_area, solicitud_subarea, solicitud_esp):
+    def __init__(self, rut, nombre_completo, carrera, facultad, via_paiep, ies_acompañamiento, correo_usach, correo_personal, telefono_1, telefono_2, matriculados2023, solicitud_area, solicitud_subarea, solicitud_esp, rut_tutor):
         # Constantes de estado
         # DISPONIBLE = 0
         # ASIGNADO = 1
         # ESPERA = 2
         # PARCIAL = 3
+        if (rut_tutor != ""):
+            self.estado = 1
+        else:
+            self.estado = 0    
+
+
         self.rut = rut
         self.nombre_completo = nombre_completo
         self.carrera = carrera
@@ -16,10 +22,15 @@ class Alumno:
         self.telefono_1 = telefono_1
         self.telefono_2 = telefono_2
         self.matriculados2023 = matriculados2023
-        self.estado = 0
+        
         self.solicitud_area = solicitud_area
         self.solicitud_subarea = solicitud_subarea
         self.solicitud_esp = solicitud_esp
+        self.peso = 0 # ! Peso que se usara para poder restar en las asiganciones de tutores (PACE valen por 2 considerando Via PAIEP)
+        if ("PACE" in self.via_paiep):
+            self.peso = 2
+        else:
+            self.peso = 1
 
         # Nivel de estudiante
         # Corresponde al semestre en el que se encuentra el estudiante (en evaluación si se mantiene)
@@ -69,6 +80,9 @@ class Alumno:
     
     def get_solicitud_esp(self):
         return self.solicitud_esp
+    
+    def get_peso(self):
+        return self.peso
     
     def change_asignado(self):
         self.estado = 1

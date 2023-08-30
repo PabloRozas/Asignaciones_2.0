@@ -52,17 +52,21 @@ class Tutores:
                 tutores.append(tutor)
         return tutores
     
+    def get_TutoresBH(self):
+        # Se obtiene una lista de tutores ordenados de mayor a menor según su nivel + horas reservadas
+        tutores = self.tutores
+        tutores.sort(key=lambda x: x.level + x.horasReservadas)
+    
     def sort_tutores(self):
         self.tutores.sort(key=lambda x: len(x.subarea))
 
     
     def to_csv(self, path):
         # Se transforma la lista de tutores a un dataframe
-        df = pd.DataFrame(columns=['rut', 'nombre_completo', 'carrera', 'facultad', 'correo_usach', 'telefono_1', 'correo_personal', 'area', 'subarea', 'horas', 'nivel'])
+        df = pd.DataFrame(columns=['rut', 'nombre_completo', 'carrera', 'facultad', 'correo_usach', 'telefono_1', 'correo_personal', 'area', 'subarea', 'horas', 'nivel', 'horas_reservadas'])
         for tutor in self.tutores:
-            new = pd.DataFrame({'rut': [tutor.rut], 'nombre_completo': [tutor.nombre_completo], 'carrera': [tutor.carrera], 'facultad': [tutor.facultad], 'correo_usach': [tutor.correo_usach], 'telefono_1': [tutor.telefono_1], 'correo_personal': [tutor.correo_personal], 'area': [tutor.area], 'subarea': [tutor.subarea], 'horas': [tutor.horas], 'nivel': [tutor.level]})
+            new = pd.DataFrame({'rut': [tutor.rut], 'nombre_completo': [tutor.nombre_completo], 'carrera': [tutor.carrera], 'facultad': [tutor.facultad], 'correo_usach': [tutor.correo_usach], 'telefono_1': [tutor.telefono_1], 'correo_personal': [tutor.correo_personal], 'area': [tutor.area], 'subarea': [tutor.subarea], 'horas': [tutor.horas], 'nivel': [tutor.level], 'horas_reservadas': [tutor.horasReservadas]})
             df = pd.concat([df, new], ignore_index=True)
 
         # Se guarda el dataframe en un archivo csv
         df.to_csv(path, index=False, header=True)
-    

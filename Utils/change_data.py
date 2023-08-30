@@ -17,10 +17,10 @@ import pandas as pd
 
 
 # Se importan las clases que se van a utilizar
-from Alumno import Alumno
-from Alumnos import Alumnos
-from Tutor import Tutor
-from Tutores import Tutores
+from Class.Alumno import Alumno
+from Class.Alumnos import Alumnos
+from Class.Tutor import Tutor
+from Class.Tutores import Tutores
   
 """ transform_data_class """
 """
@@ -56,7 +56,8 @@ def transform_data_class(data):
                         fila["MATRICULADOS 1s2023"],
                         [fila["ÁREA TUTOR 1"], fila["ÁREA TUTOR 2"], fila["ÁREA TUTOR 3"]],
                         [fila["SUBÁREA TUTOR 1"], fila["SUBÁREA TUTOR 2"], fila["SUBÁREA TUTOR 3"]],
-                        aux)
+                        aux,
+                        fila["RUT TUTOR 1"])
         alumno.change_nivel(1)
 
         alumnos_vae.add_alumno(alumno)
@@ -82,7 +83,8 @@ def transform_data_class(data):
                         fila["MATRICULADOS 1s2023"],
                         [fila["ÁREA TUTOR 1"], fila["ÁREA TUTOR 2"], fila["ÁREA TUTOR 3"]],
                         [fila["SUBÁREA TUTOR 1"], fila["SUBÁREA TUTOR 2"], fila["SUBÁREA TUTOR 3"]],
-                        aux)
+                        aux,
+                        fila["RUT TUTOR 1"])
         alumnos_pace.add_alumno(alumno)
     # alumnos_pace.print_alumnos()
 
@@ -104,7 +106,8 @@ def transform_data_class(data):
                         fila["MATRICULADOS 1s2023"],
                         [fila["ÁREA TUTOR 1"], fila["ÁREA TUTOR 2"], fila["ÁREA TUTOR 3"]],
                         [fila["SUBÁREA TUTOR 1"], fila["SUBÁREA TUTOR 2"], fila["SUBÁREA TUTOR 3"]],
-                        aux)
+                        aux,
+                        fila["RUT TUTOR 1"])
         alumnos_solicitudes.add_alumno(alumno)
     # alumnos_solicitudes.print_alumnos()
 
@@ -118,7 +121,10 @@ def transform_data_class(data):
                       fila["CORREO PERSONAL"], 
                       fila["ÁREA"], 
                       fila["SUB-ÁREA"], 
-                      fila["HORAS"])
+                      fila["HORAS"],
+                      fila["HORAS RESERVADAS"],
+                      fila["OBSERVACIONES"]
+                        )
         tutoresC.add_tutor(tutor)
     # tutoresC.print_tutores()
 
